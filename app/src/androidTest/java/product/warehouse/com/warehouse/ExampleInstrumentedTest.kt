@@ -15,11 +15,6 @@ import retrofit2.Response
 import java.io.IOException
 
 
-
-
-
-
-
 /**
  * Instrumented test, which will execute on an Android device.
  *
@@ -29,7 +24,7 @@ import java.io.IOException
 class ExampleInstrumentedTest {
 
     internal lateinit var response: Response<UserModel>
-    private lateinit var mainActivity :MainActivity
+    private lateinit var mainActivity: MainActivity
 
 
     @get:Rule
@@ -39,7 +34,7 @@ class ExampleInstrumentedTest {
     @Before
     @Throws(Exception::class)
     fun setUp() {
-       mainActivity = mActivityRule.activity
+        mainActivity = mActivityRule.activity
     }
 
 
@@ -51,16 +46,29 @@ class ExampleInstrumentedTest {
         val call = apiEndpoints.getUserID()
 
         try {
-            //Magic is here at .execute() instead of .enqueue()
             val response = call.subscribe()
-            val authResponse =  response.dispose()
-
             assertTrue(response.isDisposed)
 
         } catch (e: IOException) {
             e.printStackTrace()
         }
 
+
+    }
+
+    @Test
+    fun getSearchResult() {
+        val apiEndpoints = ApiClient.getRetrofitInstance(mainActivity).create(ApiInterface::class.java)
+
+        val call = apiEndpoints.getSearchList("10","20","C53DD114-A966-418C-BDFF-D63D77BDA0FD","a","search","test","C53DD114-A966-418C-BDFF-D63D77BDA0FD")
+
+        try {
+            val response = call.subscribe()
+            assertTrue(response.isDisposed)
+
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
 
     }
 }
