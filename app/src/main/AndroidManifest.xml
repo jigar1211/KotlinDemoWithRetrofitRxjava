@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".view.MainActivity"
+            android:name="com.warehouse.warehousegroup.view.MainActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustResize">
             <intent-filter>
@@ -24,13 +24,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.ProductSearch"
+            android:name="com.warehouse.warehousegroup.view.ProductSearch"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".view.BarcodeScan"
+            android:name="com.warehouse.warehousegroup.view.BarcodeScan"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".view.ProductDetail"
+            android:name="com.warehouse.warehousegroup.view.ProductDetail"
             android:screenOrientation="portrait"></activity>
     </application>
 

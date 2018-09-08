@@ -7,10 +7,10 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
-import product.warehouse.com.warehouse.model.UserModel
-import product.warehouse.com.warehouse.remote.ApiClient
-import product.warehouse.com.warehouse.remote.ApiInterface
-import product.warehouse.com.warehouse.view.MainActivity
+import com.warehouse.warehousegroup.model.UserModel
+import com.warehouse.warehousegroup.remote.ApiClient
+import com.warehouse.warehousegroup.remote.ApiInterface
+import com.warehouse.warehousegroup.view.MainActivity
 import retrofit2.Response
 import java.io.IOException
 
